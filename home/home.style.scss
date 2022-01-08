@@ -1,0 +1,212 @@
+@use '../sass/main.scss'as main;
+
+.body {
+    overflow-y: scroll;
+}
+
+/* ========================== slide ========================== */
+
+.upBody__slide {
+    position: absolute;
+    @include main.MarginAbsolute($bottom:0, $left:0, $right:0);
+
+    /* ============== */
+    .slide__images img {
+        display: none;
+        height: 23vh;
+        margin: 0 auto;
+        object-fit: contain;
+    }
+
+    /* ============== */
+    .slide__images img:nth-child(1) {
+        display: block;
+        margin: 0 auto;
+    }
+}
+
+/* ================ Bullets ================ */
+.container__bullets {
+    width: 70px;
+    margin: 0px auto;
+
+    /* =================== */
+    .bullets__bullet-single {
+        display: inline-block;
+        /* === */
+        width: 9px;
+        height: 9px;
+        /* === */
+        margin: 0 2px;
+        /* === */
+        cursor: pointer;
+        border-radius: 20px;
+        background-color: black;
+    }
+
+    /* =================== */
+    .bullets__active-bullet {
+        background-color: var(--default-contrast-color);
+    }
+}
+
+/* ==================================== Carousel ==================================== */
+/* ==================== Double Carousel ==================== */
+.container {
+    /* vvvvv size vvvvv */
+    width: 80%;
+    min-width: 220px;
+    height: 37%;
+    min-height: 180px;
+    /* ^^^^^ size ^^^^^ */
+    /* === */
+    background-image: linear-gradient(var(--default-gradientUp-color),
+            var(--default-gradientDown-color));
+    /* === */
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    /* === */
+    @include main.BorderRadius($colorBorder:var(--default-contrast-color), $radius:10px);
+    /* === */
+    margin: 3% 10%;
+    padding: 10px 0px;
+
+    /* ================ */
+    .container__carousel {
+        position: relative;
+        width: 90%;
+        height: 45%;
+        min-height: 75px;
+        margin: 0 auto;
+        padding: 10px 20px;
+        border: var(--default-contrast-color) solid 1px;
+
+        /* =========== */
+        &:nth-child(1) {
+            margin-bottom: 10px;
+        }
+
+        /* ============= */
+        .carousel__blocks {
+            display: flex;
+            gap: 10px;
+            overflow-y: scroll;
+            scroll-behavior: smooth;
+            height: 110%;
+            /* ocult scrolkbar at the firefox */
+            scrollbar-width: none;
+
+            /* ocult scrollbar at other browserws */
+            &::-webkit-scrollbar {
+                display: none;
+            }
+        }
+
+    }
+}
+
+
+
+.blocks__block {
+    /* vvvvv size vvvvv */
+    min-width: 100px;
+    max-width: 100px;
+    min-height: 80%;
+    max-height: 80%;
+    /* ^^^^^ size ^^^^^ */
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+
+    /* ========= */
+    .block__image {
+        height: 100%;
+
+        /* = */
+        img {
+            border-radius: 5px;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .block__description {
+        font-size: 10px;
+        color: var(--default-contrast-color);
+        margin: 0;
+        overflow-x: hidden;
+        text-overflow: ellipsis;
+    }
+
+
+}
+
+/* ========== Icons_navegation_Carusel ========== */
+.blocks__icon {
+    @include main.MarginAbsolute($top: 33%, $bottom:0);
+    font-size: 20px;
+    color: var(--default-contrast-color);
+    cursor: pointer;
+}
+
+.blocks--iconRight {
+    right: -0px;
+}
+
+.blocks--iconLeft {
+    left: 0;
+}
+
+/* ============== Icons_navegation_Carusel ============== */
+
+@media (min-width: 400px) {
+
+    /* === slide === */
+    .slide__images img {
+        display: none;
+        height: 30vh !important;
+        margin: 0 auto;
+        object-fit: contain;
+    }
+    /* === carousel === */
+    .container__carousel {
+        position: relative;
+        width: 80%;
+    }
+}
+
+@media (min-width: 700px) {
+    .body {
+        overflow-y: hidden;
+    }
+
+    /* === Slide === */
+    .upBody__slide {
+        position: relative;
+    }
+
+    /* === carousel === */
+    .container {
+        width: 60%;
+        margin: 3% 10%;
+    }
+
+    .container__carousel {
+        position: relative;
+        width: 85%;
+    }
+}
+
+@media (min-width: 900px) {
+    .slide__images img {
+        height: 35vh;
+    }
+
+    /* === carousel === */
+    .container {
+        min-width: 500px;
+        max-width: 500px;
+    }
+}

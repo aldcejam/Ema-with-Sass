@@ -1,0 +1,40 @@
+@use '../defaultSpecifications.scss';
+
+@mixin MarginAbsolute($top:auto, $right:auto, $bottom:auto, $left:auto) {
+    position: absolute;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+}
+
+@mixin BorderRadius($thickness:1px, $colorBorder:black, $radius:100%) {
+    border-radius: $radius;
+    border: solid $thickness $colorBorder;
+}
+
+@mixin StyleFont($color:white, $fontSize) {
+    color: $color;
+    font-size: $fontSize;
+}
+
+@mixin ScrollBar($width:12px,
+    $colorTrack:var(--default-background60-color),
+    $colorTumb:var(--default-contrast-color),
+    $thicknessTumb:3px,
+    $colorBorderTumb:var(--default-background60-color),
+    $borderRadius: 20px) {
+    &::-webkit-scrollbar {
+        width: $width;
+    }
+
+    &::-webkit-scrollbar-track {
+        background-color: $colorTrack;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: $colorTumb;
+        border-radius: $borderRadius;
+        border: solid $thicknessTumb $colorBorderTumb;
+    }
+}

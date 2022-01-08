@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root{
+    --hsl-color60: 279, 72%, 32%;
+    --hsl-color30: 279, 72%, 18%;
+    /* ====== boddy colors ====== */
+    --color-body: rgb(167, 167, 167);
+    --default-background60-color: hsl(var(--hsl-color60));
+    --default-background30-color: hsl(var(--hsl-color30));
+    --default-contrast-color: #FB0E9C;
+    /* ====== gradient ====== */
+    --default-gradientUp-color: hsla(var(--hsl-color60), 0.6);
+    --default-gradientDown-color: hsla(var(--hsl-color30), 0.6);
+    /* ====== Header background ====== */
+    --default-header:#1f0029ce;
+
+    /* ====== default Font ====== */
+    font-family: Poppins;
+    
+    /* ====== default Color Font ====== */
+    --default1-color-font: #FB0E9C;
+    --default2-color-font: #740696;
+    
+    /* ====== Default title ====== */
+    --default-color-title: #ffffff;
+    --default-weight-title: 400;
+    --default-size300-title: 1.4rem;
+    --default-size700-title: 1.6rem;
+    --default-size1000-title: 1.8rem;
+
+    /* ====== Default Subtitle ====== */
+    --default-color-subTitle: rgb(202, 202, 202);
+    --default-weight-subTitle: 20;
+    
+    /* ====== Default Text ====== */
+    --default-color-text: rgb(216, 216, 216);
+    --default-size300-text: 0.8rem;
+    --default-size700-text: 1rem;
+    --default-size1000-text: 1.2rem;
+
+}
+.dark-mode:root{
+
+}

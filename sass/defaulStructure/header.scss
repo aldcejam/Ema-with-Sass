@@ -1,0 +1,240 @@
+/* ========================== Header ========================== */
+.header {
+  /* === */
+
+  display: flex;
+
+  /* === */
+
+  width: 97%;
+  height: 10vh;
+
+  /* === */
+
+  min-height: 40px;
+  max-height: 65px;
+
+  /* === */
+
+  justify-content: space-between;
+  align-items: center;
+  margin: 15px 20px;
+
+  /* === */
+}
+
+/* ========================== Navegation ========================== */
+/* =================== tag-NAV =================== */
+.header__options {
+  transition: 1s;
+  /* === */
+
+  position: absolute;
+  z-index: 99;
+
+  /* === */
+
+  height: 90vh;
+  min-height: 300px;
+
+  width: 0;
+  min-width: 0px;
+  /* === */
+
+  right: 0px;
+  top: -15px;
+
+  /* === */
+
+  border-radius: 5px;
+  /* === */
+
+  background-color: var(--default-header);
+
+  /* === */
+}
+/* =================== tag-UL =================== */
+.options__list {
+  /* === */
+
+  position: absolute;
+
+  /* === */
+
+  width: 100%;
+  bottom: 10%;
+
+  /* === */
+}
+
+/* =================== tag-LI =================== */
+.list__unity {
+  /* === */
+
+  display: none;
+
+  /* === */
+
+  width: 55%;
+
+  /* === */
+
+  border-radius: 30px;
+  border: var(--default1-color-font) outset 0.3px;
+
+  /* === */
+
+  margin: 10px 4vw;
+
+  /* === */
+
+  padding: 0px 1px 0px 6px;
+
+  /* === */
+}
+/* =================== tag-I icon =================== */
+.unity--icon {
+  /* === */
+
+  color: var(--default-contrast-color);
+
+  /* === */
+
+  font-size: 20px;
+
+  /* === */
+}
+
+/* =================== tag-A =================== */
+.unity__link {
+  color: var(--default1-color-font);
+}
+
+/* ===== Open or close Menu ===== */
+.openMenu {
+  transition: 1s;
+  width: 40%;
+  min-width: 250px;
+  border-left: solid 0.2px var(--default-contrast-color);
+  border-bottom: solid 0.2px var(--default-contrast-color);
+}
+.openOptionsMenu {
+  display: block;
+}
+/* =================== Menu Burguer =================== */
+.options__menuBurguer {
+  /* === */
+
+  position: absolute;
+  z-index: 999;
+
+  /* === */
+
+  right: 2vh;
+  padding: 10px;
+
+  /* === */
+
+  cursor: pointer;
+
+  /* === */
+}
+
+.menuBurguer__line {
+  /* === */
+
+  transition: 1s;
+
+  /* === */
+
+  width: 40px;
+  height: 5px;
+
+  /* === */
+
+  margin: 5px 0;
+
+  /* === */
+
+  background-color: var(--default-contrast-color);
+  border-radius: 2px;
+
+  /* === */
+}
+#menuBurguer__line1 {
+  height: 8px;
+  width: 50px;
+}
+/* =================== tranform menu burgue in X =================== */
+.options__menuBurguer.active #menuBurguer__line1 {
+  /* === */
+
+  width: 40px;
+  height: 5px;
+
+  /* === */
+
+  transition: 1s;
+  transform: translateY(10px) rotate(45deg);
+
+  /* === */
+}
+.options__menuBurguer.active #menuBurguer__line2 {
+  transition: 1s;
+  transform: rotate(135deg);
+}
+
+/* ================ Log ================ */
+.header__log {
+  height: 70%;
+  max-height: 50px;
+}
+.header__image {
+  min-height: 30px;
+  height: 100%;
+}
+
+/* ========================== Media queries ==========================  */
+@media (min-width: 700px) {
+  /* ===== tag-NAV ===== */
+  .header__options {
+    /* === */
+
+    position: initial;
+
+    /* === */
+
+    height: 40%;
+    min-height: initial;
+
+    width: 40%;
+
+    background-color: initial;
+    /* === */
+  }
+  /* ===== tag-UL ===== */
+  .options__list {
+    display: flex;
+    right: 5%;
+    width: auto;
+    bottom: inherit;
+    margin-top: inherit;
+  }
+  /* ===== tag-LI ===== */
+  .list__unity {
+    width: auto;
+    display: inherit;
+    border-radius: 6px;
+    border: inherit;
+    margin: 0 15px;
+  }
+
+  /* ===== tag-I icon ===== */
+  .unity--icon {
+    display: none;
+  }
+  /* ================ Menu Burguer ================ */
+  .options__menuBurguer {
+    display: none;
+  }
+}

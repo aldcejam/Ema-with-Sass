@@ -1,0 +1,143 @@
+@import "../sass/main.scss";
+
+/* ============================== Container (TItle,Inputs) ============================== */
+.contactar {
+    width: 80vw;
+    max-width: 200px;
+    height: 40vh;
+    max-height: 330px;
+    min-height: 226px;
+    /* === */
+    background-image: linear-gradient(var(--default-gradientUp-color),
+            var(--default-gradientDown-color));
+    /* === */
+    @include MarginAbsolute($top: 20vh, $right: 0, $left: 0);
+    z-index: 2;
+    /* === */
+    margin: auto;
+    /* === */
+    box-sizing: content-box;
+    padding: 10%;
+    /* === */
+    @include BorderRadius($thickness:1px, $colorBorder:var(--default-contrast-color), $radius:auto);
+    border-end-end-radius: 20%;
+
+}
+
+/* ================= Title ================= */
+.contactar__title {
+    @include StyleFont($color:var(--default-color-title), $fontSize: clamp(20px, 1.5rem, 100px));
+    float: right;
+    margin-right: 15%;
+}
+
+/* ================= Input ================= */
+.contactar__inputs {
+    .inputs__input {
+        height: 5vh;
+        max-height: 50px;
+        min-height: 25px;
+        /* === */
+        margin: 2% 0;
+        /* === */
+        @include BorderRadius($thickness:0px, $radius: 20px);
+        background-repeat: no-repeat;
+        background-position-y: 50%;
+        background-position-x: 2%;
+        padding: 0 25px;
+
+        /* ==== */
+        &:focus {
+            outline: none !important;
+            border: 1px solid var(--default-contrast-color);
+            box-shadow: 0 0 10px var(--default-contrast-color);
+        }
+    }
+    
+    /* ============= */
+    .inputs--inputbig {
+        width: 90%;
+    }
+    
+    /* ================ */
+    .inputs--inputsmall {
+        width: 75%;
+    }
+    
+    /* ============== */
+    .inputs__inputNome {
+        background-image: url(/img-icons/user.svg);
+        background-size: 12%;
+    }
+    
+    /* =============== */
+    .inputs__inputEmail {
+        background-image: url(/img-icons/envelope-edit.svg);
+        background-size: 15%;
+    }
+    
+    /* ================= */
+    .inputs__inputAssunto {
+        background-image: url(/img-icons/envelope-edit.svg);
+        background-size: 15%;
+    }
+
+    /* ================== */
+    .inputs__inputMensagem {
+        height: 12vh;
+        background-image: url(/img-icons/co\mment-alt-lines.svg);
+        background-size: 12%;
+        background-position-y: 45%;
+    }
+
+    /* ================ */
+    .inputs__inputButton {
+        width: 35%;
+        padding: 2px;
+        margin-left: 25%;
+        @include BorderRadius($thickness: 0px, $radius:20px);
+        @include StyleFont($color: var(--default-contrast-color), $fontSize: 80%);
+
+        &:active {
+            outline: none !important;
+            box-shadow: 0 0 10px var(--default-contrast-color);
+        }
+    }
+}
+
+
+
+.illustration {
+    width: 90%;
+    @include MarginAbsolute($right: 0, $bottom: 0, $left: 0);
+    margin: 0 auto;
+    /* ================ */
+    .illustration__image {
+        width: 100%;
+        max-height: 60vh;
+    }
+}
+
+
+@media (min-width: 700px) {
+    .contactar {
+        /* === */
+        left: 10%;
+        right: initial;
+        /* === */
+        padding: 60px 80px;
+        /* === */
+    }
+}
+
+@media (min-width: 1100px) {
+    .illustration {
+        width: 50%;
+        @include MarginAbsolute($top:25vh, $right: 2%, $bottom: initial, $left: initial);
+    }
+
+    .illustration__image {
+        width: 100%;
+        max-height: 60vh;
+    }
+}

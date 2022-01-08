@@ -1,0 +1,517 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+:root {
+  --hsl-color60: 279, 72%, 32%;
+  --hsl-color30: 279, 72%, 18%;
+  /* ====== boddy colors ====== */
+  --color-body: rgb(167, 167, 167);
+  --default-background60-color: hsl(var(--hsl-color60));
+  --default-background30-color: hsl(var(--hsl-color30));
+  --default-contrast-color: #FB0E9C;
+  /* ====== gradient ====== */
+  --default-gradientUp-color: hsla(var(--hsl-color60), 0.6);
+  --default-gradientDown-color: hsla(var(--hsl-color30), 0.6);
+  /* ====== Header background ====== */
+  --default-header:#1f0029ce;
+  /* ====== default Font ====== */
+  font-family: Poppins;
+  /* ====== default Color Font ====== */
+  --default1-color-font: #FB0E9C;
+  --default2-color-font: #740696;
+  /* ====== Default title ====== */
+  --default-color-title: #ffffff;
+  --default-weight-title: 400;
+  --default-size300-title: 1.4rem;
+  --default-size700-title: 1.6rem;
+  --default-size1000-title: 1.8rem;
+  /* ====== Default Subtitle ====== */
+  --default-color-subTitle: rgb(202, 202, 202);
+  --default-weight-subTitle: 20;
+  /* ====== Default Text ====== */
+  --default-color-text: rgb(216, 216, 216);
+  --default-size300-text: 0.8rem;
+  --default-size700-text: 1rem;
+  --default-size1000-text: 1.2rem;
+}
+
+body {
+  /* ===  */
+  display: flex;
+  position: fixed;
+  /* === */
+  width: 100vw;
+  height: 100vh;
+  /* === */
+  background-color: var(--color-body);
+  /* === */
+}
+
+/* ============ Style Background Circle ============ */
+/* ==================== Body ==================== */
+.body {
+  /* === */
+  overflow-x: hidden;
+  /* === */
+  width: 90vw;
+  height: 90vh;
+  /* === */
+  margin: auto;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  /* === */
+  border-radius: 15px;
+  /* === */
+  background-color: var(--default-background60-color);
+  /* === */
+}
+
+.body::-webkit-scrollbar {
+  width: 0px;
+}
+.body::-webkit-scrollbar-track {
+  background-color: var(--default-background60-color);
+}
+.body::-webkit-scrollbar-thumb {
+  background-color: var(--default-contrast-color);
+  border-radius: 20px;
+  border: solid 3px var(--default-background60-color);
+}
+
+@media (max-height: 520px) {
+  .body::-webkit-scrollbar {
+    width: 12px;
+  }
+  .body::-webkit-scrollbar-track {
+    background-color: var(--default-background60-color);
+  }
+  .body::-webkit-scrollbar-thumb {
+    background-color: var(--default-contrast-color);
+    border-radius: 20px;
+    border: solid 3px var(--default-background60-color);
+  }
+}
+.upBody {
+  /* === */
+  position: relative;
+  /* === */
+  width: 100%;
+  height: 50vh;
+  /* === */
+  background-image: linear-gradient(var(--default-background60-color), var(--default-background30-color));
+  /* === */
+  border-radius: 10px;
+  -moz-box-shadow: 0px 20px 15px 0px var(--default-background30-color);
+  -webkit-box-shadow: 0px 20px 15px 0px var(--default-background30-color);
+  box-shadow: 0px 20px 20px 0px var(--default-background30-color);
+  /* === */
+}
+
+/* ========================== Header ========================== */
+.header {
+  /* === */
+  display: flex;
+  /* === */
+  width: 97%;
+  height: 10vh;
+  /* === */
+  min-height: 40px;
+  max-height: 65px;
+  /* === */
+  justify-content: space-between;
+  align-items: center;
+  margin: 15px 20px;
+  /* === */
+}
+
+/* ========================== Navegation ========================== */
+/* =================== tag-NAV =================== */
+.header__options {
+  transition: 1s;
+  /* === */
+  position: absolute;
+  z-index: 99;
+  /* === */
+  height: 90vh;
+  min-height: 300px;
+  width: 0;
+  min-width: 0px;
+  /* === */
+  right: 0px;
+  top: -15px;
+  /* === */
+  border-radius: 5px;
+  /* === */
+  background-color: var(--default-header);
+  /* === */
+}
+
+/* =================== tag-UL =================== */
+.options__list {
+  /* === */
+  position: absolute;
+  /* === */
+  width: 100%;
+  bottom: 10%;
+  /* === */
+}
+
+/* =================== tag-LI =================== */
+.list__unity {
+  /* === */
+  display: none;
+  /* === */
+  width: 55%;
+  /* === */
+  border-radius: 30px;
+  border: var(--default1-color-font) outset 0.3px;
+  /* === */
+  margin: 10px 4vw;
+  /* === */
+  padding: 0px 1px 0px 6px;
+  /* === */
+}
+
+/* =================== tag-I icon =================== */
+.unity--icon {
+  /* === */
+  color: var(--default-contrast-color);
+  /* === */
+  font-size: 20px;
+  /* === */
+}
+
+/* =================== tag-A =================== */
+.unity__link {
+  color: var(--default1-color-font);
+}
+
+/* ===== Open or close Menu ===== */
+.openMenu {
+  transition: 1s;
+  width: 40%;
+  min-width: 250px;
+  border-left: solid 0.2px var(--default-contrast-color);
+  border-bottom: solid 0.2px var(--default-contrast-color);
+}
+
+.openOptionsMenu {
+  display: block;
+}
+
+/* =================== Menu Burguer =================== */
+.options__menuBurguer {
+  /* === */
+  position: absolute;
+  z-index: 999;
+  /* === */
+  right: 2vh;
+  padding: 10px;
+  /* === */
+  cursor: pointer;
+  /* === */
+}
+
+.menuBurguer__line {
+  /* === */
+  transition: 1s;
+  /* === */
+  width: 40px;
+  height: 5px;
+  /* === */
+  margin: 5px 0;
+  /* === */
+  background-color: var(--default-contrast-color);
+  border-radius: 2px;
+  /* === */
+}
+
+#menuBurguer__line1 {
+  height: 8px;
+  width: 50px;
+}
+
+/* =================== tranform menu burgue in X =================== */
+.options__menuBurguer.active #menuBurguer__line1 {
+  /* === */
+  width: 40px;
+  height: 5px;
+  /* === */
+  transition: 1s;
+  transform: translateY(10px) rotate(45deg);
+  /* === */
+}
+
+.options__menuBurguer.active #menuBurguer__line2 {
+  transition: 1s;
+  transform: rotate(135deg);
+}
+
+/* ================ Log ================ */
+.header__log {
+  height: 70%;
+  max-height: 50px;
+}
+
+.header__image {
+  min-height: 30px;
+  height: 100%;
+}
+
+/* ========================== Media queries ==========================  */
+@media (min-width: 700px) {
+  /* ===== tag-NAV ===== */
+  .header__options {
+    /* === */
+    position: initial;
+    /* === */
+    height: 40%;
+    min-height: initial;
+    width: 40%;
+    background-color: initial;
+    /* === */
+  }
+
+  /* ===== tag-UL ===== */
+  .options__list {
+    display: flex;
+    right: 5%;
+    width: auto;
+    bottom: inherit;
+    margin-top: inherit;
+  }
+
+  /* ===== tag-LI ===== */
+  .list__unity {
+    width: auto;
+    display: inherit;
+    border-radius: 6px;
+    border: inherit;
+    margin: 0 15px;
+  }
+
+  /* ===== tag-I icon ===== */
+  .unity--icon {
+    display: none;
+  }
+
+  /* ================ Menu Burguer ================ */
+  .options__menuBurguer {
+    display: none;
+  }
+}
+.body {
+  overflow-y: scroll;
+}
+
+/* ========================== slide ========================== */
+.upBody__slide {
+  position: absolute;
+  position: absolute;
+  top: auto;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  /* ============== */
+  /* ============== */
+}
+.upBody__slide .slide__images img {
+  display: none;
+  height: 23vh;
+  margin: 0 auto;
+  object-fit: contain;
+}
+.upBody__slide .slide__images img:nth-child(1) {
+  display: block;
+  margin: 0 auto;
+}
+
+/* ================ Bullets ================ */
+.container__bullets {
+  width: 70px;
+  margin: 0px auto;
+  /* =================== */
+  /* =================== */
+}
+.container__bullets .bullets__bullet-single {
+  display: inline-block;
+  /* === */
+  width: 9px;
+  height: 9px;
+  /* === */
+  margin: 0 2px;
+  /* === */
+  cursor: pointer;
+  border-radius: 20px;
+  background-color: black;
+}
+.container__bullets .bullets__active-bullet {
+  background-color: var(--default-contrast-color);
+}
+
+/* ==================================== Carousel ==================================== */
+/* ==================== Double Carousel ==================== */
+.container {
+  /* vvvvv size vvvvv */
+  width: 80%;
+  min-width: 220px;
+  height: 37%;
+  min-height: 180px;
+  /* ^^^^^ size ^^^^^ */
+  /* === */
+  background-image: linear-gradient(var(--default-gradientUp-color), var(--default-gradientDown-color));
+  /* === */
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  /* === */
+  border-radius: 10px;
+  border: solid 1px var(--default-contrast-color);
+  /* === */
+  margin: 3% 10%;
+  padding: 10px 0px;
+  /* ================ */
+}
+.container .container__carousel {
+  position: relative;
+  width: 90%;
+  height: 45%;
+  min-height: 75px;
+  margin: 0 auto;
+  padding: 10px 20px;
+  border: var(--default-contrast-color) solid 1px;
+  /* =========== */
+  /* ============= */
+}
+.container .container__carousel:nth-child(1) {
+  margin-bottom: 10px;
+}
+.container .container__carousel .carousel__blocks {
+  display: flex;
+  gap: 10px;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  height: 110%;
+  /* ocult scrolkbar at the firefox */
+  scrollbar-width: none;
+  /* ocult scrollbar at other browserws */
+}
+.container .container__carousel .carousel__blocks::-webkit-scrollbar {
+  display: none;
+}
+
+.blocks__block {
+  /* vvvvv size vvvvv */
+  min-width: 100px;
+  max-width: 100px;
+  min-height: 80%;
+  max-height: 80%;
+  /* ^^^^^ size ^^^^^ */
+  border-radius: 5px;
+  text-align: center;
+  text-decoration: none;
+  /* ========= */
+}
+.blocks__block .block__image {
+  height: 100%;
+  /* = */
+}
+.blocks__block .block__image img {
+  border-radius: 5px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.blocks__block .block__description {
+  font-size: 10px;
+  color: var(--default-contrast-color);
+  margin: 0;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ========== Icons_navegation_Carusel ========== */
+.blocks__icon {
+  position: absolute;
+  top: 33%;
+  right: auto;
+  bottom: 0;
+  left: auto;
+  font-size: 20px;
+  color: var(--default-contrast-color);
+  cursor: pointer;
+}
+
+.blocks--iconRight {
+  right: 0px;
+}
+
+.blocks--iconLeft {
+  left: 0;
+}
+
+/* ============== Icons_navegation_Carusel ============== */
+@media (min-width: 400px) {
+  /* === slide === */
+  .slide__images img {
+    display: none;
+    height: 30vh !important;
+    margin: 0 auto;
+    object-fit: contain;
+  }
+
+  /* === carousel === */
+  .container__carousel {
+    position: relative;
+    width: 80%;
+  }
+}
+@media (min-width: 700px) {
+  .body {
+    overflow-y: hidden;
+  }
+
+  /* === Slide === */
+  .upBody__slide {
+    position: relative;
+  }
+
+  /* === carousel === */
+  .container {
+    width: 60%;
+    margin: 3% 10%;
+  }
+
+  .container__carousel {
+    position: relative;
+    width: 85%;
+  }
+}
+@media (min-width: 900px) {
+  .slide__images img {
+    height: 35vh;
+  }
+
+  /* === carousel === */
+  .container {
+    min-width: 500px;
+    max-width: 500px;
+  }
+}
+
+/*# sourceMappingURL=home.style.css.map */
