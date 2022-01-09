@@ -20,7 +20,7 @@ ul {
   --color-body: rgb(167, 167, 167);
   --default-background60-color: hsl(var(--hsl-color60));
   --default-background30-color: hsl(var(--hsl-color30));
-  --default-contrast-color: #FB0E9C;
+  --default-contrast-color: hsl(324, 97%, 52%);
   /* ====== gradient ====== */
   --default-gradientUp-color: hsla(var(--hsl-color60), 0.6);
   --default-gradientDown-color: hsla(var(--hsl-color30), 0.6);
@@ -380,6 +380,7 @@ body {
   padding: 2px;
 }
 
+/* ============================== illustration ============================== */
 .illustration {
   width: 90%;
   /* === */
@@ -396,6 +397,7 @@ body {
   max-height: 60vh;
 }
 
+/* ============================== Media ============================== */
 @media (max-width: 700px) and (min-height: 700px) {
   .contactar {
     height: clamp(150px, 40vh, 220px);
@@ -413,13 +415,13 @@ body {
 }
 @media (min-width: 1000px) {
   .illustration {
-    width: 50%;
-    position: absolute;
     position: absolute;
     top: 25vh;
     right: 2%;
     bottom: initial;
     left: initial;
+    /* === */
+    width: 50%;
   }
 
   .illustration__image {

@@ -20,7 +20,7 @@ ul {
   --color-body: rgb(167, 167, 167);
   --default-background60-color: hsl(var(--hsl-color60));
   --default-background30-color: hsl(var(--hsl-color30));
-  --default-contrast-color: #FB0E9C;
+  --default-contrast-color: hsl(324, 97%, 52%);
   /* ====== gradient ====== */
   --default-gradientUp-color: hsla(var(--hsl-color60), 0.6);
   --default-gradientDown-color: hsla(var(--hsl-color30), 0.6);
@@ -398,7 +398,7 @@ body {
   border: solid 0px black;
   color: var(--default-contrast-color);
   font-size: 80%;
-  font-weight: normal;
+  font-weight: initial;
 }
 .contactar__inputs .inputs__inputButton:active {
   outline: none !important;
