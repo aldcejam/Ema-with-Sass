@@ -1,4 +1,4 @@
-@import "../sass/main.scss";
+@use "../sass/main.scss" as main;
 
 /* ============================== Container (TItle,Inputs) ============================== */
 .contactar {
@@ -11,7 +11,7 @@
     background-image: linear-gradient(var(--default-gradientUp-color),
             var(--default-gradientDown-color));
     /* === */
-    @include MarginAbsolute($top: 20vh, $right: 0, $left: 0);
+    @include main.MarginAbsolute($top: 20vh, $right: 0, $left: 0);
     z-index: 2;
     /* === */
     margin: auto;
@@ -19,14 +19,14 @@
     box-sizing: content-box;
     padding: 10%;
     /* === */
-    @include BorderRadius($thickness:1px, $colorBorder:var(--default-contrast-color), $radius:auto);
+    @include main.BorderRadius($thickness:1px, $colorBorder:var(--default-contrast-color), $radius:auto);
     border-end-end-radius: 20%;
 
 }
 
 /* ================= Title ================= */
 .contactar__title {
-    @include StyleFont($color:var(--default-color-title), $fontSize: clamp(20px, 1.5rem, 100px));
+    @include main.StyleFont($color: var(--default-color-title), $fontSize: clamp(var(--default-size-title)), $fontWeight: normal);
     float: right;
     margin-right: 15%;
 }
@@ -40,7 +40,7 @@
         /* === */
         margin: 2% 0;
         /* === */
-        @include BorderRadius($thickness:0px, $radius: 20px);
+        @include main.BorderRadius($thickness:0px, $radius: 20px);
         background-repeat: no-repeat;
         background-position-y: 50%;
         background-position-x: 2%;
@@ -95,8 +95,8 @@
         width: 35%;
         padding: 2px;
         margin-left: 25%;
-        @include BorderRadius($thickness: 0px, $radius:20px);
-        @include StyleFont($color: var(--default-contrast-color), $fontSize: 80%);
+        @include main.BorderRadius($thickness: 0px, $radius:20px);
+        @include main.StyleFont($color: var(--default-contrast-color), $fontSize: 80%);
 
         &:active {
             outline: none !important;
@@ -109,7 +109,7 @@
 
 .illustration {
     width: 90%;
-    @include MarginAbsolute($right: 0, $bottom: 0, $left: 0);
+    @include main.MarginAbsolute($right: 0, $bottom: 0, $left: 0);
     margin: 0 auto;
     /* ================ */
     .illustration__image {
@@ -133,7 +133,7 @@
 @media (min-width: 1100px) {
     .illustration {
         width: 50%;
-        @include MarginAbsolute($top:25vh, $right: 2%, $bottom: initial, $left: initial);
+        @include main.MarginAbsolute($top:25vh, $right: 2%, $bottom: initial, $left: initial);
     }
 
     .illustration__image {

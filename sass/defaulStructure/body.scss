@@ -41,19 +41,11 @@ body {
 
   background-color: var(--default-background60-color);
   /* === */
+  @include mixins.ScrollBar($width:12px);
+  box-shadow: rgba(0, 0, 0, 0.8) 0px 22px 70px 4px;  
 }
 
-.body {
-  @include mixins.ScrollBar($width:0px);
-}
 
-@media (max-height: 520px) {
-  .body {
-    @include mixins.ScrollBar($width:12px);
-  }
-
-
-}
 
 
 .upBody {
@@ -63,7 +55,7 @@ body {
   /* === */
   
   width: 100%;
-  height: 50vh;
+  height: max(50vh,300px);
   
   /* === */
   

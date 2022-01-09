@@ -13,9 +13,10 @@
     border: solid $thickness $colorBorder;
 }
 
-@mixin StyleFont($color:white, $fontSize) {
+@mixin StyleFont($color:white, $fontSize, $fontWeight: normal) {
     color: $color;
     font-size: $fontSize;
+    font-weight: $fontWeight;
 }
 
 @mixin ScrollBar($width:12px,
@@ -24,6 +25,10 @@
     $thicknessTumb:3px,
     $colorBorderTumb:var(--default-background60-color),
     $borderRadius: 20px) {
+
+    scrollbar-color: $colorTumb $colorTrack;
+    scrollbar-width: thin !important;
+
     &::-webkit-scrollbar {
         width: $width;
     }

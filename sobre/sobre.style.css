@@ -1,1 +1,478 @@
-/* No CSS *//*# sourceMappingURL=sobre.style.css.map */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+:root {
+  --hsl-color60: 279, 72%, 32%;
+  --hsl-color30: 279, 72%, 18%;
+  /* ====== boddy colors ====== */
+  --color-body: rgb(167, 167, 167);
+  --default-background60-color: hsl(var(--hsl-color60));
+  --default-background30-color: hsl(var(--hsl-color30));
+  --default-contrast-color: #FB0E9C;
+  /* ====== gradient ====== */
+  --default-gradientUp-color: hsla(var(--hsl-color60), 0.6);
+  --default-gradientDown-color: hsla(var(--hsl-color30), 0.6);
+  /* ====== Header background ====== */
+  --default-header:#1f0029ce;
+  /* ====== default Font ====== */
+  font-family: Poppins;
+  /* ====== default Color Font ====== */
+  --default1-color-font: #FB0E9C;
+  --default2-color-font: #740696;
+  /* ====== Default title ====== */
+  --default-color-title: #ffffff;
+  --default-weight-title: 500;
+  --default-size-title: 20px, 150%, 100px;
+  /* ====== Default Subtitle ====== */
+  --default-color-subTitle: rgb(202, 202, 202);
+  --default-weight-subTitle: 20;
+  /* ====== Default Text ====== */
+  --default-color-text: rgb(216, 216, 216);
+  --default-size-text: 15px, 50%, 50px;
+}
+
+body {
+  /* ===  */
+  display: flex;
+  position: fixed;
+  /* === */
+  width: 100vw;
+  height: 100vh;
+  /* === */
+  background-color: var(--color-body);
+  /* === */
+}
+
+/* ============ Style Background Circle ============ */
+/* ==================== Body ==================== */
+.body {
+  /* === */
+  overflow-x: hidden;
+  /* === */
+  width: 90vw;
+  height: 90vh;
+  /* === */
+  margin: auto;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  /* === */
+  border-radius: 15px;
+  /* === */
+  background-color: var(--default-background60-color);
+  /* === */
+  scrollbar-color: var(--default-contrast-color) var(--default-background60-color);
+  scrollbar-width: thin !important;
+  box-shadow: rgba(0, 0, 0, 0.8) 0px 22px 70px 4px;
+}
+.body::-webkit-scrollbar {
+  width: 12px;
+}
+.body::-webkit-scrollbar-track {
+  background-color: var(--default-background60-color);
+}
+.body::-webkit-scrollbar-thumb {
+  background-color: var(--default-contrast-color);
+  border-radius: 20px;
+  border: solid 3px var(--default-background60-color);
+}
+
+.upBody {
+  /* === */
+  position: relative;
+  /* === */
+  width: 100%;
+  height: max(50vh, 300px);
+  /* === */
+  background-image: linear-gradient(var(--default-background60-color), var(--default-background30-color));
+  /* === */
+  border-radius: 10px;
+  -moz-box-shadow: 0px 20px 15px 0px var(--default-background30-color);
+  -webkit-box-shadow: 0px 20px 15px 0px var(--default-background30-color);
+  box-shadow: 0px 20px 20px 0px var(--default-background30-color);
+  /* === */
+}
+
+/* ========================== Header ========================== */
+.header {
+  /* === */
+  display: flex;
+  /* === */
+  width: 97%;
+  height: 10vh;
+  /* === */
+  min-height: 40px;
+  max-height: 65px;
+  /* === */
+  justify-content: space-between;
+  align-items: center;
+  margin: 15px 20px;
+  /* === */
+}
+
+/* ========================== Navegation ========================== */
+/* =================== tag-NAV =================== */
+.header__options {
+  transition: 1s;
+  /* === */
+  position: absolute;
+  z-index: 99;
+  /* === */
+  height: 90vh;
+  min-height: 300px;
+  width: 0;
+  min-width: 0px;
+  /* === */
+  right: 0px;
+  top: -15px;
+  /* === */
+  border-radius: 5px;
+  /* === */
+  background-color: var(--default-header);
+  /* === */
+}
+
+/* =================== tag-UL =================== */
+.options__list {
+  /* === */
+  position: absolute;
+  /* === */
+  width: 100%;
+  bottom: 10%;
+  /* === */
+}
+
+/* =================== tag-LI =================== */
+.list__unity {
+  /* === */
+  display: none;
+  /* === */
+  width: 55%;
+  /* === */
+  border-radius: 30px;
+  border: var(--default1-color-font) outset 0.3px;
+  /* === */
+  margin: 10px 4vw;
+  /* === */
+  padding: 0px 1px 0px 6px;
+  /* === */
+}
+
+/* =================== tag-I icon =================== */
+.unity--icon {
+  /* === */
+  color: var(--default-contrast-color);
+  /* === */
+  font-size: 20px;
+  /* === */
+}
+
+/* =================== tag-A =================== */
+.unity__link {
+  color: var(--default1-color-font);
+}
+
+/* ===== Open or close Menu ===== */
+.openMenu {
+  transition: 1s;
+  width: 40%;
+  min-width: 250px;
+  border-left: solid 0.2px var(--default-contrast-color);
+  border-bottom: solid 0.2px var(--default-contrast-color);
+}
+
+.openOptionsMenu {
+  display: block;
+}
+
+/* =================== Menu Burguer =================== */
+.options__menuBurguer {
+  /* === */
+  position: absolute;
+  z-index: 999;
+  /* === */
+  right: 2vh;
+  padding: 10px;
+  /* === */
+  cursor: pointer;
+  /* === */
+}
+
+.menuBurguer__line {
+  /* === */
+  transition: 1s;
+  /* === */
+  width: 40px;
+  height: 5px;
+  /* === */
+  margin: 5px 0;
+  /* === */
+  background-color: var(--default-contrast-color);
+  border-radius: 2px;
+  /* === */
+}
+
+#menuBurguer__line1 {
+  height: 8px;
+  width: 50px;
+}
+
+/* =================== tranform menu burgue in X =================== */
+.options__menuBurguer.active #menuBurguer__line1 {
+  /* === */
+  width: 40px;
+  height: 5px;
+  /* === */
+  transition: 1s;
+  transform: translateY(10px) rotate(45deg);
+  /* === */
+}
+
+.options__menuBurguer.active #menuBurguer__line2 {
+  transition: 1s;
+  transform: rotate(135deg);
+}
+
+/* ================ Log ================ */
+.header__log {
+  height: 70%;
+  max-height: 50px;
+}
+
+.header__image {
+  min-height: 30px;
+  height: 100%;
+}
+
+/* ========================== Media queries ==========================  */
+@media (min-width: 700px) {
+  /* ===== tag-NAV ===== */
+  .header__options {
+    /* === */
+    position: initial;
+    /* === */
+    height: 40%;
+    min-height: initial;
+    width: 40%;
+    background-color: initial;
+    /* === */
+  }
+
+  /* ===== tag-UL ===== */
+  .options__list {
+    display: flex;
+    right: 5%;
+    width: auto;
+    bottom: inherit;
+    margin-top: inherit;
+  }
+
+  /* ===== tag-LI ===== */
+  .list__unity {
+    width: auto;
+    display: inherit;
+    border-radius: 6px;
+    border: inherit;
+    margin: 0 15px;
+  }
+
+  /* ===== tag-I icon ===== */
+  .unity--icon {
+    display: none;
+  }
+
+  /* ================ Menu Burguer ================ */
+  .options__menuBurguer {
+    display: none;
+  }
+}
+/* ============================= Informations ============================= */
+.informations {
+  display: flex;
+  padding: 20px;
+}
+
+.informations__description {
+  position: absolute;
+  z-index: 2;
+  /* === */
+  width: 40%;
+  height: max(30vh, 250px);
+  /* === */
+  overflow-y: scroll;
+  overflow-x: hidden;
+  /* === */
+  background-image: linear-gradient(var(--default-gradientUp-color), var(--default-gradientDown-color));
+  /* === */
+  padding: 10px;
+  margin: 30px 0 40px;
+  /* === */
+  border: 1px solid var(--default-contrast-color);
+  scrollbar-color: var(--default-contrast-color) var(--default-background60-color);
+  scrollbar-width: thin !important;
+}
+.informations__description::-webkit-scrollbar {
+  width: 12px;
+}
+.informations__description::-webkit-scrollbar-track {
+  background-color: var(--default-background60-color);
+}
+.informations__description::-webkit-scrollbar-thumb {
+  background-color: var(--default-contrast-color);
+  border-radius: 20px;
+  border: solid 3px var(--default-background60-color);
+}
+
+.description__title {
+  color: var(--default-color-title);
+  font-size: clamp(var(--default-size-title));
+  font-weight: var(--default-weight-title);
+}
+
+.description__text {
+  word-break: break-all;
+  padding: 5px 10px 0 5px;
+  color: var(--default-color-subTitle);
+  font-size: clamp(var(--default-size-text));
+  font-weight: var(--default-weight-title);
+}
+
+/* ======================== Illustration-and-Developers ======================== */
+.informations__illuDev {
+  position: absolute;
+  top: auto;
+  right: 0px;
+  bottom: 0px;
+  left: auto;
+  height: 70vh;
+  width: 100%;
+}
+.informations__illuDev .illuDev__illustration {
+  position: absolute;
+  /* === */
+  width: 100%;
+  height: max(35vh, 200px);
+  /* === */
+  margin: 0 auto;
+  padding: 0 10px;
+  /* = */
+}
+.informations__illuDev .illuDev__illustration img {
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.illuDev__developers {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  /* === */
+  position: absolute;
+  top: auto;
+  right: -10px;
+  bottom: 0px;
+  left: auto;
+  /* === */
+  width: 60%;
+  height: 34vh;
+  /* === */
+  box-sizing: border-box;
+  padding: 20px;
+}
+.illuDev__developers .developers__developer {
+  margin: 0 auto;
+  text-align: center;
+  /* ========== */
+}
+.illuDev__developers .developers__developer:nth-child(3) {
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+.illuDev__developers .developers__developer .developer__image {
+  width: clamp(50px, 10vh, 100px);
+  height: clamp(50px, 10vh, 100px);
+  border-radius: 100%;
+  border: solid 2px var(--default-contrast-color);
+  box-sizing: content-box;
+  margin: 0 auto 3px;
+  /* ================= */
+}
+.illuDev__developers .developers__developer .developer__image img {
+  width: 100%;
+  border-radius: 100%;
+}
+.illuDev__developers .developers__developer .developer__name {
+  color: var(--default-color-title);
+  font-size: 0.7rem;
+  font-weight: var(--default-weight-title);
+}
+.illuDev__developers .developers__developer .developer__dev {
+  color: var(--default-color-subTitle);
+  font-size: 0.6rem;
+  font-weight: var(--default-weight-subTitle);
+}
+
+/* ======================== Medias ======================== */
+@media (max-height: 570px) {
+  .illuDev__developers {
+    bottom: -70px;
+  }
+}
+@media (max-height: 500px) {
+  .illuDev__developers {
+    bottom: -120px;
+  }
+}
+@media (min-width: 700px) {
+  .informations__illuDev {
+    width: 60%;
+  }
+
+  /* ============= Description ============= */
+  .informations__description {
+    position: absolute;
+    top: 20vh;
+    right: 50vw;
+    left: 20px;
+    width: 30vw;
+    max-width: 350px;
+    height: 60vh;
+  }
+
+  /* ============= Develoers ============= */
+  .illuDev__developers {
+    position: absolute;
+    right: 4vw;
+    width: 45vw;
+    max-width: 600px;
+    display: flex;
+    align-items: center;
+    padding: 0px;
+  }
+
+  .developer__image {
+    width: 15vh;
+    height: 15vh;
+  }
+}
+@media (min-width: 1000px) {
+  .informations__description {
+    left: 8%;
+  }
+}
+
+/*# sourceMappingURL=sobre.style.css.map */

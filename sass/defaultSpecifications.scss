@@ -23,10 +23,8 @@
     
     /* ====== Default title ====== */
     --default-color-title: #ffffff;
-    --default-weight-title: 400;
-    --default-size300-title: 1.4rem;
-    --default-size700-title: 1.6rem;
-    --default-size1000-title: 1.8rem;
+    --default-weight-title: 500;
+    --default-size-title: 20px, 150%, 100px;
 
     /* ====== Default Subtitle ====== */
     --default-color-subTitle: rgb(202, 202, 202);
@@ -34,9 +32,7 @@
     
     /* ====== Default Text ====== */
     --default-color-text: rgb(216, 216, 216);
-    --default-size300-text: 0.8rem;
-    --default-size700-text: 1rem;
-    --default-size1000-text: 1.2rem;
+    --default-size-text: 15px, 50%, 50px;
 
 }
 .dark-mode:root{

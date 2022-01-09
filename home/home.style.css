@@ -33,18 +33,14 @@ ul {
   --default2-color-font: #740696;
   /* ====== Default title ====== */
   --default-color-title: #ffffff;
-  --default-weight-title: 400;
-  --default-size300-title: 1.4rem;
-  --default-size700-title: 1.6rem;
-  --default-size1000-title: 1.8rem;
+  --default-weight-title: 500;
+  --default-size-title: 20px, 150%, 100px;
   /* ====== Default Subtitle ====== */
   --default-color-subTitle: rgb(202, 202, 202);
   --default-weight-subTitle: 20;
   /* ====== Default Text ====== */
   --default-color-text: rgb(216, 216, 216);
-  --default-size300-text: 0.8rem;
-  --default-size700-text: 1rem;
-  --default-size1000-text: 1.2rem;
+  --default-size-text: 15px, 50%, 50px;
 }
 
 body {
@@ -79,10 +75,12 @@ body {
   /* === */
   background-color: var(--default-background60-color);
   /* === */
+  scrollbar-color: var(--default-contrast-color) var(--default-background60-color);
+  scrollbar-width: thin !important;
+  box-shadow: rgba(0, 0, 0, 0.8) 0px 22px 70px 4px;
 }
-
 .body::-webkit-scrollbar {
-  width: 0px;
+  width: 12px;
 }
 .body::-webkit-scrollbar-track {
   background-color: var(--default-background60-color);
@@ -93,25 +91,12 @@ body {
   border: solid 3px var(--default-background60-color);
 }
 
-@media (max-height: 520px) {
-  .body::-webkit-scrollbar {
-    width: 12px;
-  }
-  .body::-webkit-scrollbar-track {
-    background-color: var(--default-background60-color);
-  }
-  .body::-webkit-scrollbar-thumb {
-    background-color: var(--default-contrast-color);
-    border-radius: 20px;
-    border: solid 3px var(--default-background60-color);
-  }
-}
 .upBody {
   /* === */
   position: relative;
   /* === */
   width: 100%;
-  height: 50vh;
+  height: max(50vh, 300px);
   /* === */
   background-image: linear-gradient(var(--default-background60-color), var(--default-background30-color));
   /* === */
@@ -322,7 +307,6 @@ body {
 /* ========================== slide ========================== */
 .upBody__slide {
   position: absolute;
-  position: absolute;
   top: auto;
   right: 0;
   bottom: 0;
@@ -368,10 +352,8 @@ body {
 /* ==================== Double Carousel ==================== */
 .container {
   /* vvvvv size vvvvv */
-  width: 80%;
-  min-width: 220px;
-  height: 37%;
-  min-height: 180px;
+  width: clamp(220px, 80%, 500px);
+  height: max(37%, 180px);
   /* ^^^^^ size ^^^^^ */
   /* === */
   background-image: linear-gradient(var(--default-gradientUp-color), var(--default-gradientDown-color));
@@ -383,7 +365,7 @@ body {
   border-radius: 10px;
   border: solid 1px var(--default-contrast-color);
   /* === */
-  margin: 3% 10%;
+  margin: 5vh 10% 2vh;
   padding: 10px 0px;
   /* ================ */
 }
@@ -469,48 +451,22 @@ body {
 @media (min-width: 400px) {
   /* === slide === */
   .slide__images img {
-    display: none;
     height: 30vh !important;
-    margin: 0 auto;
-    object-fit: contain;
-  }
-
-  /* === carousel === */
-  .container__carousel {
-    position: relative;
-    width: 80%;
   }
 }
 @media (min-width: 700px) {
-  .body {
-    overflow-y: hidden;
-  }
-
   /* === Slide === */
   .upBody__slide {
-    position: relative;
+    left: inherit;
+    right: 10%;
   }
-
-  /* === carousel === */
-  .container {
-    width: 60%;
-    margin: 3% 10%;
-  }
-
-  .container__carousel {
-    position: relative;
-    width: 85%;
+  .upBody__slide .slide__images img {
+    height: max(30vh, 200px) !important;
   }
 }
 @media (min-width: 900px) {
   .slide__images img {
     height: 35vh;
-  }
-
-  /* === carousel === */
-  .container {
-    min-width: 500px;
-    max-width: 500px;
   }
 }
 

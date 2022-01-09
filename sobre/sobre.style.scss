@@ -1,0 +1,171 @@
+@use "../sass/main.scss"as main;
+
+
+
+
+/* ============================= Informations ============================= */
+.informations {
+    display: flex;
+    padding: 20px;
+}
+
+.informations__description {
+    position: absolute;
+    z-index: 2;
+    /* === */
+    width: 40%;
+    height: max(30vh, 250px);
+    /* === */
+    overflow-y: scroll;
+    overflow-x: hidden;
+    /* === */
+    background-image: linear-gradient(var(--default-gradientUp-color),
+            var(--default-gradientDown-color));
+    /* === */
+    padding: 10px;
+    margin: 30px 0 40px;
+    /* === */
+    border: 1px solid var(--default-contrast-color);
+    @include main.ScrollBar();
+}
+
+.description__title {
+    @include main.StyleFont($color: var(--default-color-title), $fontSize: clamp(var(--default-size-title)), $fontWeight: var(--default-weight-title));
+}
+
+.description__text {
+    word-break: break-all;
+    padding: 5px 10px 0 5px;
+    @include main.StyleFont($color: var(--default-color-subTitle), $fontSize: clamp(var(--default-size-text)), $fontWeight: var(--default-weight-title));
+}
+
+/* ======================== Illustration-and-Developers ======================== */
+.informations__illuDev {
+    @include main.MarginAbsolute($right: 0px, $bottom: 0px);
+    height: 70vh;
+    width: 100%;
+
+    .illuDev__illustration {
+        position: absolute;
+        /* === */
+        width: 100%;
+        height: max(35vh, 200px);
+        /* === */
+        margin: 0 auto;
+        padding: 0 10px;
+
+        /* = */
+        img {
+            height: 100%;
+            width: 100%;
+            margin: 0 auto;
+        }
+    }
+}
+
+
+
+.illuDev__developers {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* === */
+    @include main.MarginAbsolute($right: -10px, $bottom: 0px);
+    /* === */
+    width: 60%;
+    height: 34vh;
+    /* === */
+    box-sizing: border-box;
+    padding: 20px;
+
+    .developers__developer {
+        margin: 0 auto;
+        text-align: center;
+
+        /* ========== */
+        &:nth-child(3) {
+            grid-column-start: 1;
+            grid-column-end: 3;
+        }
+
+        .developer__image {
+            width: clamp(50px, 10vh, 100px);
+            height: clamp(50px, 10vh, 100px);
+            /* === */
+            @include main.BorderRadius($thickness:2px, $colorBorder:var(--default-contrast-color));
+            /* === */
+            box-sizing: content-box;
+            margin: 0 auto 3px;
+
+            /* ================= */
+            img {
+                width: 100%;
+                border-radius: 100%;
+            }
+        }
+
+        .developer__name {
+            @include main.StyleFont($color:var(--default-color-title), $fontSize: 0.7rem, $fontWeight:var(--default-weight-title));
+        }
+
+        .developer__dev {
+            @include main.StyleFont($color:var(--default-color-subTitle), $fontSize: 0.6rem, $fontWeight: var(--default-weight-subTitle));
+        }
+
+    }
+}
+
+/* ======================== Medias ======================== */
+@media (max-height: 570px) {
+    .illuDev__developers {
+        bottom: -70px;
+    }
+}
+
+@media (max-height: 500px) {
+    .illuDev__developers {
+        bottom: -120px;
+    }
+}
+
+
+@media (min-width: 700px) {
+
+    .informations__illuDev {
+        width: 60%;
+    }
+
+    /* ============= Description ============= */
+
+    .informations__description {
+        position: absolute;
+        top: 20vh;
+        right: 50vw;
+        left: 20px;
+        width: 30vw;
+        max-width: 350px;
+        height: 60vh;
+    }
+
+    /* ============= Develoers ============= */
+    .illuDev__developers {
+        position: absolute;
+        right: 4vw;
+        width: 45vw;
+        max-width: 600px;
+        display: flex;
+        align-items: center;
+        padding: 0px;
+    }
+
+    .developer__image {
+        width: 15vh;
+        height: 15vh;
+    }
+}
+
+@media (min-width: 1000px) {
+    .informations__description {
+        left: 8%;
+    }
+
+}
