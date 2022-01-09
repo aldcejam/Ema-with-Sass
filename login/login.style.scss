@@ -1,0 +1,119 @@
+@use "../sass/main.scss"as main;
+
+/* ============================== Container (TItle,Inputs) ============================== */
+.contactar {
+    width: min(80vw, 200px);
+    height: max(40vh, 210px);
+    /* === */
+    background-image: linear-gradient(var(--default-gradientUp-color),
+            var(--default-gradientDown-color));
+    /* === */
+    @include main.MarginAbsolute($top: max(20vh, 120px), $right:0, $left:0);
+    margin: auto;
+    z-index: 2;
+    /* === */
+    /* === */
+    box-sizing: content-box;
+    padding: 10%;
+    /* === */
+    border: 1px solid var(--default-contrast-color);
+    border-end-end-radius: 20%;
+
+    .contactar__title {
+        @include main.StyleFont($color:var(--default-color-title), $fontSize:clamp(20px, 20vh, 40px));
+        float: right;
+        margin: auto 15% 5px;
+    }
+
+    .inputs__input {
+        width: 90%;
+        height: clamp(25px, 7vh, 35px);
+        /* === */
+        margin: 3% 0;
+        padding: 0 25px;
+        /* === */
+        @include main.BorderRadius($thickness: 0px, $radius:20px);
+        /* === */
+        background-position-y: 50%;
+        background-size: 12%;
+        background-repeat: no-repeat;
+        background-position-x: 2%;
+
+        &::placeholder {
+            @include main.MarginAbsolute($top:35%);
+        }
+    }
+
+    .inputs__inputNome {
+        background-image: url(/img-icons/user.svg);
+    }
+
+    .inputs__inputAssunto {
+        background-image: url(/img-icons/envelope-edit.svg);
+    }
+
+    .inputs__buttons {
+        display: flex;
+        /* === */
+        width: 90%;
+        /* === */
+        gap: 10px;
+        margin-top: 3%;
+        padding-left: 15px;
+
+        .buttons__inputButton {
+            height: clamp(20px, 4vh, 40px);
+            width: 38%;
+            /* === */
+            background-color: white;
+            /* === */
+            @include main.BorderRadius($thickness: 0px, $radius:20px);
+            @include main.StyleFont($color: var(--default-contrast-color), $fontSize: 80%);
+            padding: 2px;
+        }
+    }
+}
+
+/* ============================== illustration ============================== */
+.illustration {
+    width: 90%;
+    /* === */
+    @include main.MarginAbsolute($right:0, $bottom: 0, $left: 0);
+    margin: 0 auto;
+}
+
+.illustration__image {
+    width: 100%;
+    max-height: 60vh;
+}
+
+/* ============================== Media ============================== */
+@media (max-width: 700px) and (min-height: 700px) {
+    .contactar {
+        height: clamp(150px, 40vh, 220px);
+    }
+}
+
+@media (min-width: 700px) {
+    .contactar {
+        /* === */
+        left: 10%;
+        right: initial;
+        /* === */
+        padding: 60px 60px;
+        /* === */
+    }
+}
+
+@media (min-width: 1000px) {
+    .illustration {
+        @include main.MarginAbsolute($top:25vh, $right:2%, $bottom: initial, $left: initial);
+        /* === */
+        width: 50%;
+    }
+
+    .illustration__image {
+        width: 100%;
+        max-height: 50vh;
+    }
+}

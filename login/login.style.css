@@ -1,1 +1,431 @@
-/* No CSS *//*# sourceMappingURL=login.style.css.map */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+:root {
+  --hsl-color60: 279, 72%, 32%;
+  --hsl-color30: 279, 72%, 18%;
+  /* ====== boddy colors ====== */
+  --color-body: rgb(167, 167, 167);
+  --default-background60-color: hsl(var(--hsl-color60));
+  --default-background30-color: hsl(var(--hsl-color30));
+  --default-contrast-color: #FB0E9C;
+  /* ====== gradient ====== */
+  --default-gradientUp-color: hsla(var(--hsl-color60), 0.6);
+  --default-gradientDown-color: hsla(var(--hsl-color30), 0.6);
+  /* ====== Header background ====== */
+  --default-header:#1f0029ce;
+  /* ====== default Font ====== */
+  font-family: Poppins;
+  /* ====== default Color Font ====== */
+  --default1-color-font: #FB0E9C;
+  --default2-color-font: #740696;
+  /* ====== Default title ====== */
+  --default-color-title: #ffffff;
+  --default-weight-title: 500;
+  --default-size-title: 20px, 150%, 100px;
+  /* ====== Default Subtitle ====== */
+  --default-color-subTitle: rgb(202, 202, 202);
+  --default-weight-subTitle: 20;
+  /* ====== Default Text ====== */
+  --default-color-text: rgb(216, 216, 216);
+  --default-size-text: 15px, 50%, 50px;
+}
+
+body {
+  /* ===  */
+  display: flex;
+  position: fixed;
+  /* === */
+  width: 100vw;
+  height: 100vh;
+  /* === */
+  background-color: var(--color-body);
+  /* === */
+}
+
+/* ============ Style Background Circle ============ */
+/* ==================== Body ==================== */
+.body {
+  /* === */
+  overflow-x: hidden;
+  /* === */
+  width: 90vw;
+  height: 90vh;
+  /* === */
+  margin: auto;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  /* === */
+  border-radius: 15px;
+  /* === */
+  background-color: var(--default-background60-color);
+  /* === */
+  scrollbar-color: var(--default-contrast-color) var(--default-background60-color);
+  scrollbar-width: thin !important;
+  box-shadow: rgba(0, 0, 0, 0.8) 0px 22px 70px 4px;
+}
+.body::-webkit-scrollbar {
+  width: 12px;
+}
+.body::-webkit-scrollbar-track {
+  background-color: var(--default-background60-color);
+}
+.body::-webkit-scrollbar-thumb {
+  background-color: var(--default-contrast-color);
+  border-radius: 20px;
+  border: solid 3px var(--default-background60-color);
+}
+
+.upBody {
+  /* === */
+  position: relative;
+  /* === */
+  width: 100%;
+  height: max(50vh, 300px);
+  /* === */
+  background-image: linear-gradient(var(--default-background60-color), var(--default-background30-color));
+  /* === */
+  border-radius: 10px;
+  -moz-box-shadow: 0px 20px 15px 0px var(--default-background30-color);
+  -webkit-box-shadow: 0px 20px 15px 0px var(--default-background30-color);
+  box-shadow: 0px 20px 20px 0px var(--default-background30-color);
+  /* === */
+}
+
+/* ========================== Header ========================== */
+.header {
+  /* === */
+  display: flex;
+  /* === */
+  width: 97%;
+  height: 10vh;
+  /* === */
+  min-height: 40px;
+  max-height: 65px;
+  /* === */
+  justify-content: space-between;
+  align-items: center;
+  margin: 15px 20px;
+  /* === */
+}
+
+/* ========================== Navegation ========================== */
+/* =================== tag-NAV =================== */
+.header__options {
+  transition: 1s;
+  /* === */
+  position: absolute;
+  z-index: 99;
+  /* === */
+  height: 90vh;
+  min-height: 300px;
+  width: 0;
+  min-width: 0px;
+  /* === */
+  right: 0px;
+  top: -15px;
+  /* === */
+  border-radius: 5px;
+  /* === */
+  background-color: var(--default-header);
+  /* === */
+}
+
+/* =================== tag-UL =================== */
+.options__list {
+  /* === */
+  position: absolute;
+  /* === */
+  width: 100%;
+  bottom: 10%;
+  /* === */
+}
+
+/* =================== tag-LI =================== */
+.list__unity {
+  /* === */
+  display: none;
+  /* === */
+  width: 55%;
+  /* === */
+  border-radius: 30px;
+  border: var(--default1-color-font) outset 0.3px;
+  /* === */
+  margin: 10px 4vw;
+  /* === */
+  padding: 0px 1px 0px 6px;
+  /* === */
+}
+
+/* =================== tag-I icon =================== */
+.unity--icon {
+  /* === */
+  color: var(--default-contrast-color);
+  /* === */
+  font-size: 20px;
+  /* === */
+}
+
+/* =================== tag-A =================== */
+.unity__link {
+  color: var(--default1-color-font);
+}
+
+/* ===== Open or close Menu ===== */
+.openMenu {
+  transition: 1s;
+  width: 40%;
+  min-width: 250px;
+  border-left: solid 0.2px var(--default-contrast-color);
+  border-bottom: solid 0.2px var(--default-contrast-color);
+}
+
+.openOptionsMenu {
+  display: block;
+}
+
+/* =================== Menu Burguer =================== */
+.options__menuBurguer {
+  /* === */
+  position: absolute;
+  z-index: 999;
+  /* === */
+  right: 2vh;
+  padding: 10px;
+  /* === */
+  cursor: pointer;
+  /* === */
+}
+
+.menuBurguer__line {
+  /* === */
+  transition: 1s;
+  /* === */
+  width: 40px;
+  height: 5px;
+  /* === */
+  margin: 5px 0;
+  /* === */
+  background-color: var(--default-contrast-color);
+  border-radius: 2px;
+  /* === */
+}
+
+#menuBurguer__line1 {
+  height: 8px;
+  width: 50px;
+}
+
+/* =================== tranform menu burgue in X =================== */
+.options__menuBurguer.active #menuBurguer__line1 {
+  /* === */
+  width: 40px;
+  height: 5px;
+  /* === */
+  transition: 1s;
+  transform: translateY(10px) rotate(45deg);
+  /* === */
+}
+
+.options__menuBurguer.active #menuBurguer__line2 {
+  transition: 1s;
+  transform: rotate(135deg);
+}
+
+/* ================ Log ================ */
+.header__log {
+  height: 70%;
+  max-height: 50px;
+}
+
+.header__image {
+  min-height: 30px;
+  height: 100%;
+}
+
+/* ========================== Media queries ==========================  */
+@media (min-width: 700px) {
+  /* ===== tag-NAV ===== */
+  .header__options {
+    /* === */
+    position: initial;
+    /* === */
+    height: 40%;
+    min-height: initial;
+    width: 40%;
+    background-color: initial;
+    /* === */
+  }
+
+  /* ===== tag-UL ===== */
+  .options__list {
+    display: flex;
+    right: 5%;
+    width: auto;
+    bottom: inherit;
+    margin-top: inherit;
+  }
+
+  /* ===== tag-LI ===== */
+  .list__unity {
+    width: auto;
+    display: inherit;
+    border-radius: 6px;
+    border: inherit;
+    margin: 0 15px;
+  }
+
+  /* ===== tag-I icon ===== */
+  .unity--icon {
+    display: none;
+  }
+
+  /* ================ Menu Burguer ================ */
+  .options__menuBurguer {
+    display: none;
+  }
+}
+/* ============================== Container (TItle,Inputs) ============================== */
+.contactar {
+  width: min(80vw, 200px);
+  height: max(40vh, 210px);
+  /* === */
+  background-image: linear-gradient(var(--default-gradientUp-color), var(--default-gradientDown-color));
+  /* === */
+  position: absolute;
+  top: max(20vh, 120px);
+  right: 0;
+  bottom: auto;
+  left: 0;
+  margin: auto;
+  z-index: 2;
+  /* === */
+  /* === */
+  box-sizing: content-box;
+  padding: 10%;
+  /* === */
+  border: 1px solid var(--default-contrast-color);
+  border-end-end-radius: 20%;
+}
+.contactar .contactar__title {
+  color: var(--default-color-title);
+  font-size: clamp(20px, 20vh, 40px);
+  font-weight: initial;
+  float: right;
+  margin: auto 15% 5px;
+}
+.contactar .inputs__input {
+  width: 90%;
+  height: clamp(25px, 7vh, 35px);
+  /* === */
+  margin: 3% 0;
+  padding: 0 25px;
+  /* === */
+  border-radius: 20px;
+  border: solid 0px black;
+  /* === */
+  background-position-y: 50%;
+  background-size: 12%;
+  background-repeat: no-repeat;
+  background-position-x: 2%;
+}
+.contactar .inputs__input::placeholder {
+  position: absolute;
+  top: 35%;
+  right: auto;
+  bottom: auto;
+  left: auto;
+}
+.contactar .inputs__inputNome {
+  background-image: url(/img-icons/user.svg);
+}
+.contactar .inputs__inputAssunto {
+  background-image: url(/img-icons/envelope-edit.svg);
+}
+.contactar .inputs__buttons {
+  display: flex;
+  /* === */
+  width: 90%;
+  /* === */
+  gap: 10px;
+  margin-top: 3%;
+  padding-left: 15px;
+}
+.contactar .inputs__buttons .buttons__inputButton {
+  height: clamp(20px, 4vh, 40px);
+  width: 38%;
+  /* === */
+  background-color: white;
+  /* === */
+  border-radius: 20px;
+  border: solid 0px black;
+  color: var(--default-contrast-color);
+  font-size: 80%;
+  font-weight: initial;
+  padding: 2px;
+}
+
+.illustration {
+  width: 90%;
+  /* === */
+  position: absolute;
+  top: auto;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: 0 auto;
+}
+
+.illustration__image {
+  width: 100%;
+  max-height: 60vh;
+}
+
+@media (max-width: 700px) and (min-height: 700px) {
+  .contactar {
+    height: clamp(150px, 40vh, 220px);
+  }
+}
+@media (min-width: 700px) {
+  .contactar {
+    /* === */
+    left: 10%;
+    right: initial;
+    /* === */
+    padding: 60px 60px;
+    /* === */
+  }
+}
+@media (min-width: 1000px) {
+  .illustration {
+    width: 50%;
+    position: absolute;
+    position: absolute;
+    top: 25vh;
+    right: 2%;
+    bottom: initial;
+    left: initial;
+  }
+
+  .illustration__image {
+    width: 100%;
+    max-height: 50vh;
+  }
+}
+
+/*# sourceMappingURL=login.style.css.map */
