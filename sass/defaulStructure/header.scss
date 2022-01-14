@@ -1,3 +1,5 @@
+@use '../mixins/defaultMixins.scss'as mixins;
+
 /* ========================== Header ========================== */
 .header {
   /* === */
@@ -6,19 +8,27 @@
 
   /* === */
 
-  width: 97%;
-  height: 10vh;
-
-  /* === */
-
-  min-height: 40px;
-  max-height: 65px;
+  height: clamp(40px, 10vh, 65px);
 
   /* === */
 
   justify-content: space-between;
   align-items: center;
-  margin: 15px 20px;
+  box-sizing: content-box;
+  padding: 15px 20px 0 5%;
+
+  @include mixins.UnderLine($width: 90%);
+  &:before {
+    animation: 2s borderHeader;
+    @keyframes borderHeader {
+      from {
+        width: 10%;
+      }
+      to {
+        width: 90%;
+      }
+    }
+  }
 
   /* === */
 }
@@ -29,41 +39,28 @@
   transition: 1s;
   /* === */
 
+  background-color: var(--default-options-color);
+  @include mixins.MarginAbsolute($top:-15px, $right: 0);
   position: absolute;
   z-index: 99;
 
   /* === */
 
-  height: 90vh;
-  min-height: 300px;
+  height: 93vh;
 
   width: 0;
   min-width: 0px;
   /* === */
 
-  right: 0px;
-  top: -15px;
-
-  /* === */
-
   border-radius: 5px;
-  /* === */
-
-  background-color: var(--default-header);
-
-  /* === */
 }
+
 /* =================== tag-UL =================== */
 .options__list {
   /* === */
-
-  position: absolute;
-
+  @include mixins.MarginAbsolute($bottom:10%);
   /* === */
-
   width: 100%;
-  bottom: 10%;
-
   /* === */
 }
 
@@ -79,30 +76,18 @@
 
   /* === */
 
-  border-radius: 30px;
-  border: var(--default1-color-font) outset 0.3px;
-
+  @include mixins.BorderRadius($thickness:1px, $colorBorder:var(--default1-color-font), $radius:30px, $type: outset);
   /* === */
 
   margin: 10px 4vw;
-
-  /* === */
-
-  padding: 0px 1px 0px 6px;
-
+  
   /* === */
 }
+
 /* =================== tag-I icon =================== */
 .unity--icon {
-  /* === */
-
-  color: var(--default-contrast-color);
-
-  /* === */
-
-  font-size: 20px;
-
-  /* === */
+  padding: 0px 1px 0px 6px;
+  @include mixins.StyleFont($color:var(--default-contrast-color), $fontSize:20px);
 }
 
 /* =================== tag-A =================== */
@@ -113,24 +98,21 @@
 /* ===== Open or close Menu ===== */
 .openMenu {
   transition: 1s;
-  width: 40%;
-  min-width: 250px;
+  width: max(40%, 250px);
   border-left: solid 0.2px var(--default-contrast-color);
   border-bottom: solid 0.2px var(--default-contrast-color);
 }
+
 .openOptionsMenu {
   display: block;
 }
+
 /* =================== Menu Burguer =================== */
 .options__menuBurguer {
   /* === */
-
-  position: absolute;
+  @include mixins.MarginAbsolute($right: 5%);
   z-index: 999;
-
   /* === */
-
-  right: 2vh;
   padding: 10px;
 
   /* === */
@@ -161,10 +143,12 @@
 
   /* === */
 }
+
 #menuBurguer__line1 {
   height: 8px;
   width: 50px;
 }
+
 /* =================== tranform menu burgue in X =================== */
 .options__menuBurguer.active #menuBurguer__line1 {
   /* === */
@@ -179,6 +163,7 @@
 
   /* === */
 }
+
 .options__menuBurguer.active #menuBurguer__line2 {
   transition: 1s;
   transform: rotate(135deg);
@@ -186,9 +171,10 @@
 
 /* ================ Log ================ */
 .header__log {
-  height: 70%;
+  height: 60%;
   max-height: 50px;
 }
+
 .header__image {
   min-height: 30px;
   height: 100%;
@@ -196,6 +182,7 @@
 
 /* ========================== Media queries ==========================  */
 @media (min-width: 700px) {
+
   /* ===== tag-NAV ===== */
   .header__options {
     /* === */
@@ -212,6 +199,7 @@
     background-color: initial;
     /* === */
   }
+
   /* ===== tag-UL ===== */
   .options__list {
     display: flex;
@@ -220,6 +208,7 @@
     bottom: inherit;
     margin-top: inherit;
   }
+
   /* ===== tag-LI ===== */
   .list__unity {
     width: auto;
@@ -233,6 +222,7 @@
   .unity--icon {
     display: none;
   }
+
   /* ================ Menu Burguer ================ */
   .options__menuBurguer {
     display: none;

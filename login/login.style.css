@@ -21,11 +21,8 @@ ul {
   --default-background60-color: hsl(var(--hsl-color60));
   --default-background30-color: hsl(var(--hsl-color30));
   --default-contrast-color: hsl(324, 97%, 52%);
-  /* ====== gradient ====== */
-  --default-gradientUp-color: hsla(var(--hsl-color60), 0.6);
-  --default-gradientDown-color: hsla(var(--hsl-color30), 0.6);
-  /* ====== Header background ====== */
-  --default-header:#1f0029ce;
+  --default-container-color: rgba(29, 29, 29, 0.35);
+  --default-options-color: rgba(29, 29, 29, 0.9);
   /* ====== default Font ====== */
   font-family: Poppins;
   /* ====== default Color Font ====== */
@@ -33,7 +30,7 @@ ul {
   --default2-color-font: #740696;
   /* ====== Default title ====== */
   --default-color-title: #ffffff;
-  --default-weight-title: 500;
+  --default-weight-title: 600;
   --default-size-title: 20px, 150%, 100px;
   /* ====== Default Subtitle ====== */
   --default-color-subTitle: rgb(202, 202, 202);
@@ -51,8 +48,14 @@ body {
   width: 100vw;
   height: 100vh;
   /* === */
-  background-color: var(--color-body);
+  background-image: url(../../img-illustration/64053.jpg);
   /* === */
+}
+body::before {
+  content: "";
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.9);
 }
 
 /* ============ Style Background Circle ============ */
@@ -77,7 +80,7 @@ body {
   /* === */
   scrollbar-color: var(--default-contrast-color) var(--default-background60-color);
   scrollbar-width: thin !important;
-  box-shadow: rgba(0, 0, 0, 0.8) 0px 22px 70px 4px;
+  box-shadow: rgba(88, 88, 88, 0.8) 0px 22px 70px 4px;
 }
 .body::-webkit-scrollbar {
   width: 12px;
@@ -112,16 +115,37 @@ body {
   /* === */
   display: flex;
   /* === */
-  width: 97%;
-  height: 10vh;
-  /* === */
-  min-height: 40px;
-  max-height: 65px;
+  height: clamp(40px, 10vh, 65px);
   /* === */
   justify-content: space-between;
   align-items: center;
-  margin: 15px 20px;
+  box-sizing: content-box;
+  padding: 15px 20px 0 5%;
+  position: relative;
   /* === */
+}
+.header:before {
+  content: "";
+  position: absolute;
+  top: auto;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: 0px auto;
+  height: 1px;
+  width: 90%;
+  background-color: var(--default-contrast-color);
+}
+.header:before {
+  animation: 2s borderHeader;
+}
+@keyframes borderHeader {
+  from {
+    width: 10%;
+  }
+  to {
+    width: 90%;
+  }
 }
 
 /* ========================== Navegation ========================== */
@@ -129,30 +153,32 @@ body {
 .header__options {
   transition: 1s;
   /* === */
+  background-color: var(--default-options-color);
+  position: absolute;
+  top: -15px;
+  right: 0;
+  bottom: auto;
+  left: auto;
   position: absolute;
   z-index: 99;
   /* === */
-  height: 90vh;
-  min-height: 300px;
+  height: 93vh;
   width: 0;
   min-width: 0px;
   /* === */
-  right: 0px;
-  top: -15px;
-  /* === */
   border-radius: 5px;
-  /* === */
-  background-color: var(--default-header);
-  /* === */
 }
 
 /* =================== tag-UL =================== */
 .options__list {
   /* === */
   position: absolute;
+  top: auto;
+  right: auto;
+  bottom: 10%;
+  left: auto;
   /* === */
   width: 100%;
-  bottom: 10%;
   /* === */
 }
 
@@ -164,21 +190,18 @@ body {
   width: 55%;
   /* === */
   border-radius: 30px;
-  border: var(--default1-color-font) outset 0.3px;
+  border: outset 1px var(--default1-color-font);
   /* === */
   margin: 10px 4vw;
-  /* === */
-  padding: 0px 1px 0px 6px;
   /* === */
 }
 
 /* =================== tag-I icon =================== */
 .unity--icon {
-  /* === */
+  padding: 0px 1px 0px 6px;
   color: var(--default-contrast-color);
-  /* === */
   font-size: 20px;
-  /* === */
+  font-weight: initial;
 }
 
 /* =================== tag-A =================== */
@@ -189,8 +212,7 @@ body {
 /* ===== Open or close Menu ===== */
 .openMenu {
   transition: 1s;
-  width: 40%;
-  min-width: 250px;
+  width: max(40%, 250px);
   border-left: solid 0.2px var(--default-contrast-color);
   border-bottom: solid 0.2px var(--default-contrast-color);
 }
@@ -203,9 +225,12 @@ body {
 .options__menuBurguer {
   /* === */
   position: absolute;
+  top: auto;
+  right: 5%;
+  bottom: auto;
+  left: auto;
   z-index: 999;
   /* === */
-  right: 2vh;
   padding: 10px;
   /* === */
   cursor: pointer;
@@ -249,7 +274,7 @@ body {
 
 /* ================ Log ================ */
 .header__log {
-  height: 70%;
+  height: 60%;
   max-height: 50px;
 }
 
@@ -300,20 +325,25 @@ body {
     display: none;
   }
 }
+.list__unity:nth-child(4) {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
 /* ============================== Container (TItle,Inputs) ============================== */
-.contactar {
+.login {
   width: min(80vw, 200px);
-  height: max(40vh, 210px);
+  height: clamp(226px, 40vh, 330px);
   /* === */
-  background-image: linear-gradient(var(--default-gradientUp-color), var(--default-gradientDown-color));
+  background-color: var(--default-container-color);
   /* === */
   position: absolute;
-  top: max(20vh, 120px);
+  top: 20vh;
   right: 0;
   bottom: auto;
   left: 0;
-  margin: auto;
   z-index: 2;
+  /* === */
+  margin: max(5vh, 20px) auto;
   /* === */
   /* === */
   box-sizing: content-box;
@@ -322,14 +352,14 @@ body {
   border: 1px solid var(--default-contrast-color);
   border-end-end-radius: 20%;
 }
-.contactar .contactar__title {
+.login .login__title {
   color: var(--default-color-title);
-  font-size: clamp(20px, 20vh, 40px);
-  font-weight: initial;
+  font-size: clamp(var(--default-size-title));
+  font-weight: var(--default-weight-title);
   float: right;
   margin: auto 15% 5px;
 }
-.contactar .inputs__input {
+.login .inputs__input {
   width: 90%;
   height: clamp(25px, 7vh, 35px);
   /* === */
@@ -344,20 +374,25 @@ body {
   background-repeat: no-repeat;
   background-position-x: 2%;
 }
-.contactar .inputs__input::placeholder {
+.login .inputs__input::placeholder {
   position: absolute;
   top: 35%;
   right: auto;
   bottom: auto;
   left: auto;
 }
-.contactar .inputs__inputNome {
+.login .inputs__input:focus {
+  outline: none !important;
+  border: 1px solid var(--default-contrast-color);
+  box-shadow: 0 0 10px var(--default-contrast-color);
+}
+.login .inputs__inputMatricula {
   background-image: url(/img-icons/user.svg);
 }
-.contactar .inputs__inputAssunto {
-  background-image: url(/img-icons/envelope-edit.svg);
+.login .inputs__inputSenha {
+  background-image: url(/img-icons/key-skeleton.svg);
 }
-.contactar .inputs__buttons {
+.login .inputs__buttons {
   display: flex;
   /* === */
   width: 90%;
@@ -366,7 +401,7 @@ body {
   margin-top: 3%;
   padding-left: 15px;
 }
-.contactar .inputs__buttons .buttons__inputButton {
+.login .inputs__buttons .buttons__inputButton {
   height: clamp(20px, 4vh, 40px);
   width: 38%;
   /* === */
@@ -378,6 +413,10 @@ body {
   font-size: 80%;
   font-weight: initial;
   padding: 2px;
+}
+.login .inputs__buttons .buttons__inputButton:active {
+  outline: none !important;
+  box-shadow: 0 0 10px var(--default-contrast-color);
 }
 
 /* ============================== illustration ============================== */
@@ -399,17 +438,35 @@ body {
 
 /* ============================== Media ============================== */
 @media (max-width: 700px) and (min-height: 700px) {
-  .contactar {
+  .login {
     height: clamp(150px, 40vh, 220px);
   }
 }
 @media (min-width: 700px) {
-  .contactar {
+  /* marked option in header */
+  .list__unity:nth-child(4) {
+    background-color: initial;
+    position: relative;
+  }
+  .list__unity:nth-child(4):before {
+    content: "";
+    position: absolute;
+    top: auto;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: 0px auto;
+    height: 1px;
+    width: 50%;
+    background-color: var(--default-contrast-color);
+  }
+
+  .login {
     /* === */
     left: 10%;
     right: initial;
     /* === */
-    padding: 60px 60px;
+    padding: 70px 70px 40px;
     /* === */
   }
 }

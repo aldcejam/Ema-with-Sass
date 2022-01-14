@@ -1,7 +1,9 @@
 @use "../sass/main.scss"as main;
 
 
-
+.list__unity:nth-child(2) {
+    background-color: rgba(0, 0, 0, 0.4);
+}
 
 /* ============================= Informations ============================= */
 .informations {
@@ -19,8 +21,7 @@
     overflow-y: scroll;
     overflow-x: hidden;
     /* === */
-    background-image: linear-gradient(var(--default-gradientUp-color),
-            var(--default-gradientDown-color));
+    background-color: var(--default-container-color);
     /* === */
     padding: 10px;
     margin: 30px 0 40px;
@@ -30,13 +31,17 @@
 }
 
 .description__title {
-    @include main.StyleFont($color: var(--default-color-title), $fontSize: clamp(var(--default-size-title)), $fontWeight: var(--default-weight-title));
+    @include main.StyleFont($color: var(--default-color-title),
+        $fontSize: clamp(var(--default-size-title)),
+        $fontWeight: var(--default-weight-title));
 }
 
 .description__text {
     word-break: break-all;
     padding: 5px 10px 0 5px;
-    @include main.StyleFont($color: var(--default-color-subTitle), $fontSize: clamp(var(--default-size-text)), $fontWeight: var(--default-weight-title));
+    @include main.StyleFont($color: var(--default-color-subTitle),
+        $fontSize: clamp(var(--default-size-text)),
+        $fontWeight: var(--default-weight-title));
 }
 
 /* ======================== Illustration-and-Developers ======================== */
@@ -129,6 +134,12 @@
 
 
 @media (min-width: 700px) {
+
+    /* marked option in header */
+    .list__unity:nth-child(2) {
+        background-color: initial;
+        @include main.UnderLine($width: 50%);
+    }
 
     .informations__illuDev {
         width: 60%;

@@ -13,8 +13,13 @@ body {
   height: 100vh;
 
   /* === */
-
-  background-color: var(--color-body);
+  background-image: url(../../img-illustration/64053.jpg);
+  &::before {
+    content: '';
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.9);
+  }
   /* === */
 }
 
@@ -42,7 +47,7 @@ body {
   background-color: var(--default-background60-color);
   /* === */
   @include mixins.ScrollBar($width:12px);
-  box-shadow: rgba(0, 0, 0, 0.8) 0px 22px 70px 4px;  
+  box-shadow: rgba(88, 88, 88, 0.8) 0px 22px 70px 4px;  
 }
 
 

@@ -8,12 +8,9 @@
     --default-background60-color: hsl(var(--hsl-color60));
     --default-background30-color: hsl(var(--hsl-color30));
     --default-contrast-color: hsl(324, 97%, 52%);
-    /* ====== gradient ====== */
-    --default-gradientUp-color: hsla(var(--hsl-color60), 0.6);
-    --default-gradientDown-color: hsla(var(--hsl-color30), 0.6);
-    /* ====== Header background ====== */
-    --default-header:#1f0029ce;
-
+    --default-container-color: rgba(29, 29, 29, 0.35);
+    --default-options-color: rgba(29, 29, 29, 0.9);
+    
     /* ====== default Font ====== */
     font-family: Poppins;
     
@@ -23,7 +20,7 @@
     
     /* ====== Default title ====== */
     --default-color-title: #ffffff;
-    --default-weight-title: 500;
+    --default-weight-title: 600;
     --default-size-title: 20px, 150%, 100px;
 
     /* ====== Default Subtitle ====== */

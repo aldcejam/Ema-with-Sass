@@ -1,16 +1,20 @@
 @use "../sass/main.scss"as main;
 
+
+.list__unity:nth-child(4) {
+    background-color: rgba(0, 0, 0, 0.4);
+}
 /* ============================== Container (TItle,Inputs) ============================== */
-.contactar {
+.login {
     width: min(80vw, 200px);
-    height: max(40vh, 210px);
+    height: clamp(226px, 40vh, 330px);
     /* === */
-    background-image: linear-gradient(var(--default-gradientUp-color),
-            var(--default-gradientDown-color));
+    background-color: var(--default-container-color);
     /* === */
-    @include main.MarginAbsolute($top: max(20vh, 120px), $right:0, $left:0);
-    margin: auto;
+    @include main.MarginAbsolute($top: 20vh, $right: 0, $left: 0);
     z-index: 2;
+    /* === */
+    margin: max(5vh, 20px) auto;
     /* === */
     /* === */
     box-sizing: content-box;
@@ -19,8 +23,8 @@
     border: 1px solid var(--default-contrast-color);
     border-end-end-radius: 20%;
 
-    .contactar__title {
-        @include main.StyleFont($color:var(--default-color-title), $fontSize:clamp(20px, 20vh, 40px));
+    .login__title {
+        @include main.StyleFont($color:var(--default-color-title), $fontSize:clamp(var(--default-size-title)), $fontWeight: var(--default-weight-title));
         float: right;
         margin: auto 15% 5px;
     }
@@ -42,14 +46,21 @@
         &::placeholder {
             @include main.MarginAbsolute($top:35%);
         }
+
+        &:focus {
+            outline: none !important;
+            border: 1px solid var(--default-contrast-color);
+            box-shadow: 0 0 10px var(--default-contrast-color);
+        }
     }
 
-    .inputs__inputNome {
+    .inputs__inputMatricula {
         background-image: url(/img-icons/user.svg);
+
     }
 
-    .inputs__inputAssunto {
-        background-image: url(/img-icons/envelope-edit.svg);
+    .inputs__inputSenha {
+        background-image: url(/img-icons/key-skeleton.svg);
     }
 
     .inputs__buttons {
@@ -61,6 +72,8 @@
         margin-top: 3%;
         padding-left: 15px;
 
+
+
         .buttons__inputButton {
             height: clamp(20px, 4vh, 40px);
             width: 38%;
@@ -70,6 +83,11 @@
             @include main.BorderRadius($thickness: 0px, $radius:20px);
             @include main.StyleFont($color: var(--default-contrast-color), $fontSize: 80%);
             padding: 2px;
+
+            &:active {
+                outline: none !important;
+                box-shadow: 0 0 10px var(--default-contrast-color);
+            }
         }
     }
 }
@@ -89,18 +107,23 @@
 
 /* ============================== Media ============================== */
 @media (max-width: 700px) and (min-height: 700px) {
-    .contactar {
+    .login {
         height: clamp(150px, 40vh, 220px);
     }
 }
 
 @media (min-width: 700px) {
-    .contactar {
+    /* marked option in header */
+    .list__unity:nth-child(4) {
+        background-color: initial;
+        @include main.UnderLine($width: 50%);
+    }
+    .login {
         /* === */
         left: 10%;
         right: initial;
         /* === */
-        padding: 60px 60px;
+        padding: 70px 70px 40px;
         /* === */
     }
 }

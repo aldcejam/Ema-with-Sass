@@ -3,7 +3,9 @@
 .body {
     overflow-y: scroll;
 }
-
+.list__unity:nth-child(1) {
+    background-color: rgba(0, 0, 0, 0.4);
+}
 /* ========================== slide ========================== */
 
 .upBody__slide {
@@ -57,8 +59,7 @@
     height: max(37%,180px);
     /* ^^^^^ size ^^^^^ */
     /* === */
-    background-image: linear-gradient(var(--default-gradientUp-color),
-            var(--default-gradientDown-color));
+    background-color: var(--default-container-color);
     /* === */
     display: flex;
     flex-wrap: wrap;
@@ -104,7 +105,6 @@
 }
 
 
-
 .blocks__block {
     /* vvvvv size vvvvv */
     min-width: 100px;
@@ -122,9 +122,9 @@
 
         /* = */
         img {
-            border-radius: 5px;
             width: 100%;
             height: 100%;
+            border-radius: 5px;
             object-fit: cover;
         }
     }
@@ -168,6 +168,11 @@
 }
 
 @media (min-width: 700px) {
+    /* marked option in header */
+    .list__unity:nth-child(1) {
+        background-color: initial;
+        @include main.UnderLine($width: 50%);
+    }
 
     /* === Slide === */
     .upBody__slide {

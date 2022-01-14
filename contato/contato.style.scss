@@ -1,20 +1,19 @@
 @use "../sass/main.scss" as main;
 
+.list__unity:nth-child(3) {
+    background-color: rgba(0, 0, 0, 0.4);
+}
 /* ============================== Container (TItle,Inputs) ============================== */
 .contactar {
-    width: 80vw;
-    max-width: 200px;
-    height: 40vh;
-    max-height: 330px;
-    min-height: 226px;
+    width: min(80vw,200px);
+    height: clamp(226px,40vh,330px);
     /* === */
-    background-image: linear-gradient(var(--default-gradientUp-color),
-            var(--default-gradientDown-color));
+    background-color: var(--default-container-color);
     /* === */
     @include main.MarginAbsolute($top: 20vh, $right: 0, $left: 0);
     z-index: 2;
     /* === */
-    margin: auto;
+    margin: max(5vh,20px) auto;
     /* === */
     box-sizing: content-box;
     padding: 10%;
@@ -26,7 +25,7 @@
 
 /* ================= Title ================= */
 .contactar__title {
-    @include main.StyleFont($color: var(--default-color-title), $fontSize: clamp(var(--default-size-title)), $fontWeight: normal);
+    @include main.StyleFont($color: var(--default-color-title), $fontSize: clamp(var(--default-size-title)), $fontWeight: var(--default-weight-title));
     float: right;
     margin-right: 15%;
 }
@@ -120,6 +119,11 @@
 
 
 @media (min-width: 700px) {
+    /* marked option in header */
+    .list__unity:nth-child(3) {
+        background-color: initial;
+        @include main.UnderLine($width: 50%);
+    }
     .contactar {
         /* === */
         left: 10%;
