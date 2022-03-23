@@ -1,4 +1,4 @@
-@use '../sass/main.scss'as main;
+@use '../sass/main' as main;
 
 .body {
     overflow-y: scroll;
@@ -10,7 +10,6 @@
 
 .upBody__slide {
     @include main.MarginAbsolute($bottom:0, $left:0, $right:0);
-
     /* ============== */
     .slide__images img {
         display: none;

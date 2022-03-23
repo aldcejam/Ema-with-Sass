@@ -13,7 +13,7 @@
     border: $type $thickness $colorBorder;
 }
 
-@mixin StyleFont($color:white, $fontSize, $fontWeight: initial) {
+@mixin StyleFont($color:white, $fontSize:normal, $fontWeight: initial) {
     color: $color;
     font-size: $fontSize;
     font-weight: $fontWeight;

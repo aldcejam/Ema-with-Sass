@@ -1,5 +1,5 @@
-@use '../defaultSpecifications.scss'as *;
-@use '..//mixins/defaultMixins.scss'as mixins;
+@use '../defaultSpecifications.scss' as *;
+@use '../mixins/defaultMixins.scss' as mixins;
 
 body {
   /* ===  */
@@ -47,7 +47,6 @@ body {
   background-color: var(--default-background60-color);
   /* === */
   @include mixins.ScrollBar($width:12px);
-  box-shadow: rgba(88, 88, 88, 0.8) 0px 22px 70px 4px;  
 }
 
 
@@ -70,9 +69,6 @@ body {
   /* === */
   
   border-radius: 10px;
-  -moz-box-shadow: 0px 20px 15px 0px var(--default-background30-color);
-  -webkit-box-shadow: 0px 20px 15px 0px var(--default-background30-color);
-  box-shadow: 0px 20px 20px 0px var(--default-background30-color);
   
   /* === */
 }

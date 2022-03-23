@@ -1,12 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 :root{
-    --hsl-color60: 279, 72%, 32%;
-    --hsl-color30: 279, 72%, 18%;
     /* ====== boddy colors ====== */
     --color-body: rgb(167, 167, 167);
-    --default-background60-color: hsl(var(--hsl-color60));
-    --default-background30-color: hsl(var(--hsl-color30));
+    --default-background60-color: #7F4CB0;
+    --default-background30-color: #AD66F0;
     --default-contrast-color: hsl(324, 97%, 52%);
     --default-container-color: rgba(29, 29, 29, 0.35);
     --default-options-color: rgba(29, 29, 29, 0.9);
